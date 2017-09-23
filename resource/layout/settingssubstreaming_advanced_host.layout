@@ -8,16 +8,100 @@ layout {
 		}
 
 		place {
-			control="DescriptionLabel,EnableHardwareEncoding,EnableDWMCapture,EnableTrafficPriorityLabel,EnableTrafficPriority"
+			control="DescriptionLabel,ChangeDesktopResolution"
 			align=top
 			width=max
 			margin-left=32
-			margin-top=42
+			margin-top=48
+			margin-right=27
+			dir=down
+			spacing=-1
+		}
+		
+		place {
+			control="DynamicallyAdjustResolution"
+			start=ChangeDesktopResolution
+			align=top
+			width=max
+			margin-left=0
+			margin-top=0
+			margin-right=-10
+			dir=down
+			spacing=-1
+		}
+		
+		place {
+			control="EnableHardwareEncoding"
+			start=DynamicallyAdjustResolution
+			align=top
+			width=max
+			margin-left=0
+			margin-top=0
+			margin-right=10
+			dir=down
+			spacing=-1
+		}
+		
+		place {
+			control="EnableHardwareEncodingNVIDIA"
+			start=EnableHardwareEncoding
+			align=top
+			width=max
+			margin-left=20
+			margin-top=-2
 			margin-right=32
 			dir=down
-			spacing=12
+			spacing=-1
 		}
-
+		
+		place {
+			control="EnableCaptureNVFBC"
+			start=EnableHardwareEncodingNVIDIA
+			align=top
+			width=max
+			margin-left=20
+			margin-top=-2
+			margin-right=37
+			dir=down
+			spacing=-1
+		}
+		
+		place {
+			control="EnableHardwareEncodingAMD,EnableHardwareEncodingIntel"
+			start=EnableCaptureNVFBC
+			align=top
+			width=max
+			margin-left=-20
+			margin-top=-2
+			margin-right=32
+			dir=down
+			spacing=-1
+		}
+		place {
+			control="SoftwareEncodingThreadsLabel,SoftwareEncodingThreads"
+			start=EnableHardwareEncodingIntel
+			align=top
+			width=max
+			margin-left=-20
+			margin-top=5
+			margin-right=27
+			margin-bottom=-2
+			spacing=3
+			dir=down
+		}
+		
+		place {
+			control="EnableTrafficPriorityLabel,EnableTrafficPriority"
+			start=SoftwareEncodingThreads
+			align=top
+			width=max
+			margin-left=0
+			margin-top=5
+			margin-right=27
+			spacing=0
+			dir=down
+		}
+		
 		place {
 			control="SupportInformationLabel"
 			region="bottom"
